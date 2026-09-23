@@ -1,0 +1,22 @@
+{
+  "_note": "Educational demo only. These rules are simplified and are NOT medical advice.",
+  "rules": [
+    {"id": "R1",  "if": ["fever", "cough"],                          "then": "respiratory_symptoms",   "description": "Fever with cough suggests a respiratory issue"},
+    {"id": "R2",  "if": ["sneezing", "runny_nose"],                  "then": "nasal_symptoms",         "description": "Sneezing with a runny nose points to nasal irritation"},
+    {"id": "R3",  "if": ["nausea", "vomiting"],                      "then": "digestive_symptoms",     "description": "Nausea with vomiting suggests a digestive issue"},
+
+    {"id": "R4",  "if": ["respiratory_symptoms", "body_aches", "fatigue"], "then": "possible_flu",     "description": "Respiratory symptoms plus aches and tiredness fit the flu"},
+    {"id": "R5",  "if": ["respiratory_symptoms", "loss_of_smell"],   "then": "possible_covid",         "description": "Respiratory symptoms plus loss of smell fit COVID-19"},
+    {"id": "R6",  "if": ["nasal_symptoms", "sore_throat"],           "then": "possible_common_cold",   "description": "Nasal symptoms plus sore throat fit a common cold"},
+    {"id": "R7",  "if": ["nasal_symptoms", "itchy_eyes"],            "then": "possible_allergy",       "description": "Nasal symptoms plus itchy eyes fit hay fever / allergy"},
+    {"id": "R8",  "if": ["digestive_symptoms", "diarrhea"],          "then": "possible_stomach_bug",   "description": "Digestive symptoms plus diarrhoea fit a stomach bug"},
+
+    {"id": "R9",  "if": ["possible_flu"],                            "then": "advice_rest_and_fluids", "description": "Flu: rest and keep hydrated"},
+    {"id": "R10", "if": ["possible_covid"],                          "then": "advice_take_a_test",     "description": "Possible COVID: take a test and limit contact"},
+    {"id": "R11", "if": ["possible_allergy"],                        "then": "advice_try_antihistamine", "description": "Allergy: an antihistamine may help (ask a pharmacist)"},
+    {"id": "R12", "if": ["possible_stomach_bug"],                    "then": "advice_rest_and_fluids", "description": "Stomach bug: rest and keep hydrated"},
+
+    {"id": "R13", "if": ["shortness_of_breath"],                     "then": "urgent_see_a_doctor",    "description": "Breathing difficulty always needs medical attention", "priority": 10},
+    {"id": "R14", "if": ["fever", "headache", "stiff_neck"],         "then": "urgent_see_a_doctor",    "description": "Fever + headache + stiff neck is a red-flag combination", "priority": 10}
+  ]
+}
